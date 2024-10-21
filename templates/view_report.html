@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_dashboard.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Report for {{ submission.student.username }}</h1>
+            <h2>Test: {{ submission.test.test_name }}</h2>
+        </header>
+
+        <div class="main-content">
+            <h3>Answers</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>Selected Option</th>
+                        <th>Correct Option</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for answer in answers %}
+                    <tr>
+                        <td>{{ answer.question.question_text }}</td>
+                        <td>{{ answer.selected_option }}</td>
+                        <td>{{ answer.question.correct_option }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

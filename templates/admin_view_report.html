@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/report.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Test Report</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Total Questions</th>
+                    <th>Correct Answers</th>
+                    <th>Incorrect Answers</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in report_data %}
+                <tr>
+                    <td>{{ row.student_name }}</td>
+                    <td>{{ row.total_questions }}</td>
+                    <td>{{ row.correct_answers }}</td>
+                    <td>{{ row.incorrect_answers }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

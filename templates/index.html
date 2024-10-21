@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome | School Exam Portal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- Main Container -->
+<div class="container text-center">
+    <div class="row align-items-center min-vh-100">
+        <div class="col-12">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="School Logo" class="logo">
+            <h1 class="mt-4">Welcome to the School Exam Portal</h1>
+            <p class="lead">Please choose your role:</p>
+
+            <!-- Buttons for Student and Admin, centered and styled -->
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-3 mb-3">
+                    <a href="/student/login" class="btn btn-primary custom-btn w-100">STUDENT</a>
+                </div>
+                <div class="col-md-3">
+                    <a href="/admin/login" class="btn btn-secondary custom-btn w-100">ADMIN</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

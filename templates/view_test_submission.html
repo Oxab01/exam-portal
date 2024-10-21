@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Test Submissions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_dashboard.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Test: {{ test.test_name }}</h1>
+            <h2>Class: {{ test.assigned_class.class_name }}</h2>
+        </header>
+
+        <div class="main-content">
+            <h3>Student Submissions</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Submission Status</th>
+                        <th>View Report</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in students %}
+                    <tr>
+                        <td>{{ student.username }}</td>
+                        <td>{{ 'Submitted' if student_status[student.id] else 'Not Submitted' }}</td>
+                        <td>
+                            {% if student_status[student.id] %}
+                            <a href="{{ url_for('view_report', student_id=student.id, test_id=test.id) }}">View Report</a>
+                            {% else %}
+                            N/A
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

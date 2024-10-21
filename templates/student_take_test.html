@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Test</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/student_test.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>{{ test.title }} - MCQ Test</h1>
+        </header>
+
+        <form action="/student/submit_test/{{ test.id }}" method="POST">
+            {% for question in questions %}
+            <div class="question">
+                <h3>{{ loop.index }}. {{ question.question_text }}</h3>
+                <div class="options">
+                    <label><input type="radio" name="q{{ question.id }}" value="a"> {{ question.option_a }}</label><br>
+                    <label><input type="radio" name="q{{ question.id }}" value="b"> {{ question.option_b }}</label><br>
+                    <label><input type="radio" name="q{{ question.id }}" value="c"> {{ question.option_c }}</label><br>
+                    <label><input type="radio" name="q{{ question.id }}" value="d"> {{ question.option_d }}</label>
+                </div>
+            </div>
+            {% endfor %}
+
+            <button type="submit" class="btn-submit">Submit Test</button>
+        </form>
+    </div>
+</body>
+</html>

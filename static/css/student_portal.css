@@ -1,0 +1,244 @@
+/* student_portal.css - combined and responsive */
+
+/* Base Styles for all pages */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f9;
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Header Styles */
+h1 {
+    color: #343a40;
+    font-weight: 600;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* --------------- Student Dashboard Styles --------------- */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.dashboard-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.dashboard-card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.dashboard-card button {
+    background-color: #28a745;
+}
+
+.dashboard-card button:hover {
+    background-color: #218838;
+}
+
+/* --------------- Test Page Styles --------------- */
+.test-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.test-question {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.test-question h2 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.test-options {
+    list-style-type: none;
+    padding: 0;
+}
+
+.test-options li {
+    margin-bottom: 10px;
+}
+
+.test-options input[type="radio"] {
+    margin-right: 10px;
+}
+
+.submit-test {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-test:hover {
+    background-color: #0056b3;
+}
+
+/* --------------- View Results Page Styles --------------- */
+.result-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.result-container h2 {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+}
+
+.result-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.result-stats div {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    margin: 0 10px;
+    background-color: #f8f9fa;
+}
+
+.result-stats div h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.result-stats div p {
+    font-size: 1rem;
+}
+
+/* Download Button */
+.download-result {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.download-result:hover {
+    background-color: #0056b3;
+}
+
+/* --------------- Responsive Styles --------------- */
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr; /* Stack cards vertically on smaller screens */
+    }
+
+    .test-container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .result-stats {
+        flex-direction: column; /* Stack the result stats vertically */
+    }
+
+    .result-stats div {
+        margin: 10px 0; /* Add space between stacked result boxes */
+    }
+
+    .submit-test, .download-result {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
+
+/* For mobile screens */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 0.875rem;
+    }
+
+    .test-question h2 {
+        font-size: 1.1rem;
+    }
+
+    .result-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .test-options li {
+        font-size: 0.875rem;
+    }
+
+    .result-stats div h3 {
+        font-size: 1.1rem;
+    }
+
+    .result-stats div p {
+        font-size: 0.875rem;
+    }
+}
